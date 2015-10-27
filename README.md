@@ -1,7 +1,5 @@
-# #25 - Meme Generator
+# #25 - Meme Album
 ---
-
-
 Technologies used:
 - HTML
 - SASS

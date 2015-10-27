@@ -1,4 +1,4 @@
-angular.module('photoEditorApp', ['ionic', 'ngCordova'])
+angular.module('memeAlbumApp', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -12,27 +12,25 @@ angular.module('photoEditorApp', ['ionic', 'ngCordova'])
 })
 
 
-.controller('photoEditorCtrl', ['$scope', function($scope){
-    $scope.original = true;
+.controller('memeAlbumCtrl', ['$scope', function($scope){
+	$scope.layout = 'grid';
 
-    if ($scope.filterSelected == 1) {
-        $scope.grayscale = true;
-    }
-    if ($scope.filterSelected == 2) {
-        $scope.sepia = true;
-    }
-    if ($scope.filterSelected == 3) {
-        $scope.saturate = true;
-    }
-    if ($scope.filterSelected == 4) {
-        $scope.invert = true;
-    }
-    if ($scope.filterSelected == 5) {
-        $scope.brightness = true;
-    }
-    if ($scope.filterSelected == 6) {
-        $scope.contrast = true;
-    }
+    $scope.memes = [
+        { img: "img/meme0.png", name: "Doge", text: "WOW" },
+        { img: "img/meme1.png", name: "Ancient Alien", text: "Asians" },
+        { img: "img/meme2.png", name: "One Does Not Simply", text: "Walk into Mordor" },
+        { img: "img/meme3.png", name: "Brace Yourselves", text: "Winter is coming" },
+        { img: "img/meme4.png", name: "First World Problems" },
+        { img: "img/meme5.png", name: "Success kid", text: "Win baby!" },
+        { img: "img/meme6.png", name: "Condescending Wonka" },
+        { img: "img/meme7.png", name: "Philosoraptor" },
+        { img: "img/meme8.png", name: "Overly attached girlfriend" },
+        { img: "img/meme9.png", name: "Grumpy Cat" },
+        { img: "img/meme11.png", name: "Not Sure if this app is good", text: "or not" },
+        { img: "img/meme14.png", name: "Side Eyeing Chloe" },
+        { img: "img/meme15.png", name: "Bad Luck Brian" }
+    ];
+
 
 
 }]);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="photoEditorApp">
+<html ng-app="memeAlbumApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -10,35 +10,32 @@
     <script src="cordova.js"></script>
     <script src="js/app.js"></script>
 </head>
-<body ng-controller="photoEditorCtrl">
+<body ng-controller="memeAlbumCtrl">
 
     <ion-pane>
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">Photo Filter</h1>
+        <ion-header-bar class="bar-balanced">
+            <h1 class="title">Meme Album</h1>
         </ion-header-bar>
         <ion-content>
 
-            <div class="list list-inset">
-                <label class="item item-input item-select">
-                    <div class="input-label">Filter</div>
-                    <select ng-model="filterSelected">
-                        <option ng-value="1">Grayscale</option>
-                        <option ng-value="2">Sepia</option>
-                        <option ng-value="3">Saturate</option>
-                        <option ng-value="4">Invert</option>
-                        <option ng-value="5">Brightness</option>
-                        <option ng-value="6">Contrast</option>
-                    </select>
-                </label>
+            <ion-toggle ng-model="layout" ng-true-value="'grid'" ng-false-value="'list'">
+                Grid mode
+            </ion-toggle>
+
+                <div class="list list-inset grid" ng-show="layout == 'grid'">
+                <div ng-repeat="meme in memes">
+                    <img ng-src="{{meme.img}}">
+                </div>
             </div>
 
 
-
-
-            <button class="button button-full button-positive" ng-click="savePhoto()">
-                Save photo
-            </button>
-
+            <div class="list list-inset list" ng-show="layout == 'list'">
+                <a class="item item-avatar" href="#" ng-repeat="meme in memes">
+                    <img ng-src="{{meme.img}}">
+                    <h2>{{meme.name}}</h2>
+                    <p>{{meme.text}}</p>
+                </a>
+            </div>
 
 
         </ion-content>
