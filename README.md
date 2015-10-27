@@ -1,2 +1,10 @@
-# meme-generator
-#25 - Meme Generator
+# #25 - Meme Generator
+---
+
+
+Technologies used:
+- HTML
+- SASS
+- AngularJS
+- Ionic
+- Cordova
