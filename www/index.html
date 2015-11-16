@@ -13,7 +13,7 @@
 <body ng-controller="memeAlbumCtrl">
 
     <ion-pane>
-        <ion-header-bar class="bar-balanced">
+        <ion-header-bar class="bar-dark">
             <h1 class="title">Meme Album</h1>
         </ion-header-bar>
         <ion-content>
@@ -22,16 +22,16 @@
                 Grid mode
             </ion-toggle>
 
-                <div class="list list-inset grid" ng-show="layout == 'grid'">
+            <div class="list list-inset grid" ng-show="layout == 'grid'">
                 <div ng-repeat="meme in memes">
-                    <img ng-src="{{meme.img}}">
+                    <img ng-src="{{meme.img}}" class="meme-thumbnail">
                 </div>
             </div>
 
 
             <div class="list list-inset list" ng-show="layout == 'list'">
                 <a class="item item-avatar" href="#" ng-repeat="meme in memes">
-                    <img ng-src="{{meme.img}}">
+                    <img ng-src="{{meme.img}}" class="meme-grid">
                     <h2>{{meme.name}}</h2>
                     <p>{{meme.text}}</p>
                 </a>
